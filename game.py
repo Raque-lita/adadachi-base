@@ -14,12 +14,14 @@ def create_adadachi():
     foods = player.inventory["foods"]
     games = player.inventory["games"]
     personality = {
-        "fav_food": random.randint(0,len(foods)),
-        "fav_game": random.randint(0,len(games)),
-        "hates_food": random.randint(0,len(foods)),
-        "hates_game": random.randint(0,len(games)),
+        "fav_food": random.randint(0,len(foods)-1), #rand index selector for fav_food
+        "fav_game": random.randint(0,len(games)-1),
+        "hates_food": random.randint(0,len(foods)-1),
+        "hates_game": random.randint(0,len(games)-1),
     }
     player.adadachi = Adadachi(name,personality)
+    # print(player)
+    print(player.inventory)
 
 
 def start_game():
