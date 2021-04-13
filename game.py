@@ -21,7 +21,7 @@ def create_adadachi():
     }
     player.adadachi = Adadachi(name,personality)
     # print(player)
-    print(player.inventory)
+    #print(player.inventory)
 
 
 def start_game():
