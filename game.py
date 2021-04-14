@@ -8,20 +8,31 @@ player = Player()
 def display(statement):
     print(statement)
 
+def create_adadachi_personality():
+    foods = player.inventory["foods"]
+    games = player.inventory["games"]
+    personality = {}
+    fav_food = random.randint(0,len(foods)-1)
+    hates_food = random.randint(0,len(foods)-1)
+    while fav_food == hates_food:
+        hates_food = random.randint(0,len(foods)-1)
+    fav_game = random.randint(0,len(games)-1)
+    hates_game = random.randint(0,len(games)-1)
+    while fav_game == hates_game:
+        hates_game = random.randint(0,len(games)-1)
+    personality["fav_food"] = fav_food
+    personality["hates_food"] = hates_food
+    personality["fav_game"] = fav_game
+    personality["hates_game"] = hates_game
+    return personality
+
+
 
 def create_adadachi():
     name = input(GET_NAME + "\n\t")
-    foods = player.inventory["foods"]
-    games = player.inventory["games"]
-    personality = {
-        "fav_food": random.randint(0,len(foods)-1), #rand index selector for fav_food
-        "fav_game": random.randint(0,len(games)-1),
-        "hates_food": random.randint(0,len(foods)-1),
-        "hates_game": random.randint(0,len(games)-1),
-    }
+    personality = create_adadachi_personality()
     player.adadachi = Adadachi(name,personality)
-    # print(player)
-    #print(player.inventory)
+
 
 
 def start_game():

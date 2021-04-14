@@ -9,7 +9,12 @@ class Adadachi:
     def personality_favorites(self):
         return self.personality["fav_food"]
         
-        #we have self.personality 
 
     def personality_hates(self):
         return self.personality["hates_food"]
+    
+    def favorite_game(self):
+        return self.personality["fav_game"]
+
+    def least_fav_game(self):
+        return self.personality["hates_game"]

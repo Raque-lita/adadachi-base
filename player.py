@@ -11,7 +11,8 @@ class Player:
         }
         
     def play_with_adadachi(self):
-        print(self.adadachi.personality) 
+        pass
+         
 
         #if fav_game is chosen, raise happiness point by 2
         #if hates_game is chosen, minus 2 points
@@ -30,11 +31,12 @@ class Player:
         least_favorite_food = self.inventory["foods"][self.adadachi.personality_hates()]
         food_to_feed = self.print_feed(favorite_food, least_favorite_food)
         if food_to_feed.lower() == favorite_food:
-            self.adadachi.happiness += 1
+            self.adadachi.happiness += 2
             self.adadachi.hunger -= 1
-        if food_to_feed == least_favorite_food:
-            self.adadachi.happiness -= 1
+        if food_to_feed.lower() == least_favorite_food:
+            self.adadachi.happiness -= 2
             self.adadachi.hunger += 1
+        
     
 
 
@@ -46,5 +48,3 @@ class Player:
         "\na happiness level of", self.adadachi.happiness,
         "\na poop level of",self.adadachi.poop_lvl)
 
-        #Your (adagachi name) is at (hunger), (poop level), (happinesslevel)
-        pass
